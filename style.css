@@ -969,6 +969,26 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* Fix for iOS background disappearing */
+    .hero {
+        background-attachment: scroll !important;
+    }
+
+    /* Adjust header elements to fit perfectly on small screens */
+    header {
+        padding: 1rem 4%;
+    }
+    
+    .logo {
+        font-size: 1.35rem;
+    }
+
+    header .btn {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.65rem;
+        letter-spacing: 0.5px;
+    }
+
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
