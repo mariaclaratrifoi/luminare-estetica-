@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminare Estética | Clínica de Estética Avançada</title>
+    <meta name="description"
+        content="Descubra o conceito de Slow Beauty na Luminare Estética. Rituais personalizados de bem-estar e estética avançada em Coimbra.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="logo">Luminare Estética</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#rituais">Rituais</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <a href="javascript:void(0)" class="btn btn-outline open-modal">RESERVAR EXPERIÊNCIA</a>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <span class="hero-subtitle">BEM-VINDOS</span>
+            <h1 class="hero-title">Luminare Estética</h1>
+            <p class="hero-tagline">CLÍNICA DE ESTÉTICA AVANÇADA</p>
+        </section>
+
+        <!-- Team Section (Replaces Concept) -->
+        <section class="the-team" id="sobre">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 class="section-title">A Nossa Equipa</h2>
+                <p style="color: #666; max-width: 600px; margin: 1rem auto 0;">Conheça as mãos experientes que cuidam de si.</p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Owner -->
+                <div class="team-member">
+                    <img src="Fotos/equipa-1.jpg" alt="Fundadora" class="team-image">
+                    <h3>Maria Clara</h3>
+                    <span>Fundadora & Diretora Clínica</span>
+                    <p style="color: #666; font-size: 0.95rem; margin-top: 0.5rem;">Especialista dedicada a trazer o conceito de 'Slow Beauty' para a realidade de cada cliente.</p>
+                </div>
+                <!-- Staff 1 -->
+                <div class="team-member">
+                    <img src="Fotos/equipa-2.jpg" alt="Terapeuta 1" class="team-image">
+                    <h3>Joana Silva</h3>
+                    <span>Terapeuta Avançada</span>
+                    <p style="color: #666; font-size: 0.95rem; margin-top: 0.5rem;">Mãos sábias e experientes prontas para guiar o seu ritual de relaxamento e tratamento.</p>
+                </div>
+                <!-- Staff 2 -->
+                <div class="team-member">
+                    <img src="Fotos/equipa-3.jpg" alt="Terapeuta 2" class="team-image">
+                    <h3>Alexandra Santos</h3>
+                    <span>Esteticista Especializada</span>
+                    <p style="color: #666; font-size: 0.95rem; margin-top: 0.5rem;">Paixão pela tecnologia aliada ao cuidado detalhado para os melhores resultados.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="rituais" class="services-section">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 class="section-title">Rituais</h2>
+            </div>
+
+            <div class="carousel-container">
+                <!-- Navigation Prev -->
+                <button class="carousel-control prev" aria-label="Anterior">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <!-- Card 1 -->
+                        <li class="carousel-slide current-slide">
+                            <article class="service-card">
+                                <div class="service-img">
+                                    <img src="Fotos/limpeza-pele.jpg" alt="Limpeza de Pele Avançada">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Limpeza de Pele Avançada</h3>
+                                    <p>"Mais do que uma limpeza, um ritual de purificação profunda que respeita a
+                                        barreira natural da sua pele."</p>
+                                    <a href="limpeza-pele.html" class="btn">SAIBA MAIS</a>
+                                </div>
+                            </article>
+                        </li>
+
+                        <!-- Card 2 -->
+                        <li class="carousel-slide">
+                            <article class="service-card">
+                                <div class="service-img">
+                                    <img src="Fotos/hidratacao-profunda.jpg" alt="Facial de Hidratação Profunda">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Facial de Hidratação Profunda</h3>
+                                    <p>"Banhos de hidratação com princípios ativos de luxo para devolver a água e o viço
+                                        que a sua pele perde no dia a dia."</p>
+                                    <a href="hidratacao-profunda.html" class="btn">SAIBA MAIS</a>
+                                </div>
+                            </article>
+                        </li>
+
+                        <!-- Card 3 -->
+                        <li class="carousel-slide">
+                            <article class="service-card">
+                                <div class="service-img">
+                                    <img src="Fotos/anti-idade.jpg" alt="Tratamento Anti-Idade e Revitalização">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Tratamento Anti-Idade e Revitalização</h3>
+                                    <p>"Protocolos de alta performance focados na renovação celular, firmeza e devolução
+                                        da luminosidade natural."</p>
+                                    <a href="anti-idade.html" class="btn">SAIBA MAIS</a>
+                                </div>
+                            </article>
+                        </li>
+
+                        <!-- Card 4 -->
+                        <li class="carousel-slide">
+                            <article class="service-card">
+                                <div class="service-img">
+                                    <img src="Fotos/massagens-assinatura.jpg" alt="Massagens de Assinatura">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Massagens</h3>
+                                    <p>"O nosso 'Ritual de Relaxamento'. Técnicas manuais envolventes num ambiente
+                                        sereno e termocontrolado para desligar do mundo."</p>
+                                    <a href="massagens.html" class="btn">SAIBA MAIS</a>
+                                </div>
+                            </article>
+                        </li>
+
+                        <!-- Card 5 -->
+                        <li class="carousel-slide">
+                            <article class="service-card">
+                                <div class="service-img">
+                                    <img src="Fotos/depilacao-laser.jpg" alt="Depilação a Laser (Alta Tecnologia)">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Depilação a Laser</h3>
+                                    <p>"Eficácia e conforto unidos num equipamento de ponta, para uma pele
+                                        permanentemente suave e impecável."</p>
+                                    <a href="depilacao-laser.html" class="btn">SAIBA MAIS</a>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Navigation Next -->
+                <button class="carousel-control next" aria-label="Próximo">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Dots Indicators -->
+            <div class="carousel-nav">
+                <button class="carousel-indicator current-slide" aria-label="Slide 1"></button>
+                <button class="carousel-indicator" aria-label="Slide 2"></button>
+                <button class="carousel-indicator" aria-label="Slide 3"></button>
+                <button class="carousel-indicator" aria-label="Slide 4"></button>
+                <button class="carousel-indicator" aria-label="Slide 5"></button>
+            </div>
+        </section>
+
+
+        <!-- Social Proof -->
+        <section class="testimonial-section">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 class="section-title">O Que Dizem de Nós</h2>
+            </div>
+            <div class="testimonial-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="Fotos/testemunho-1.jpg" alt="Ivone Junqueira">
+                    </div>
+                    <h3 class="testimonial-name">Ivone Junqueira</h3>
+                    <div class="testimonial-divider"></div>
+                    <p class="testimonial-text">"O melhor investimento que fiz na minha pele e bem-estar este ano.<br><br>Um grande abraço a toda a equipa da Luminare Estética"</p>
+                    <div class="testimonial-stars">★★★★★</div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="Fotos/testemunho-2.jpg" alt="Sofia Almeida">
+                    </div>
+                    <h3 class="testimonial-name">Sofia Almeida</h3>
+                    <div class="testimonial-divider"></div>
+                    <p class="testimonial-text">"As mãos da equipa Luminare criam momentos de pura magia. Sinto a minha pele renascer a cada visita. Recomendo sempre de olhos fechados!"</p>
+                    <div class="testimonial-stars">★★★★★</div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="Fotos/testemunho-3.jpg" alt="Catarina Mendes">
+                    </div>
+                    <h3 class="testimonial-name">Catarina Mendes</h3>
+                    <div class="testimonial-divider"></div>
+                    <p class="testimonial-text">"Um ambiente de tranquilidade absoluta. O cuidado e atenção aos detalhes fazem deste espaço um verdadeiro refúgio na cidade."</p>
+                    <div class="testimonial-stars">★★★★★</div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="contact-section" id="contacto">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 class="section-title">Contacto</h2>
+                <p style="color: #666; max-width: 600px; margin: 1rem auto 0;">Estamos no coração de Coimbra, prontos
+                    para receber o seu momento de pausa.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <h4>Localização</h4>
+                        <p>Rua da Sofia, Edifício Sofia, Loja 12<br>3000-389 Coimbra, Portugal</p>
+                    </div>
+                    <div class="contact-info-item">
+                        <h4>Horário de Funcionamento</h4>
+                        <p>Segunda - Sexta: 10h00 às 19h00<br>Sábado: 10h00 às 14h00</p>
+                    </div>
+                    <div class="contact-info-item">
+                        <h4>Contactos Diretos</h4>
+                        <p>Tel: +351 966 151 334<br>Email: luminare.estetica.coimbra@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://maps.google.com/maps?q=Rua%20da%20Sofia,%203000-389%20Coimbra,%20Portugal&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; border-radius: 8px; min-height: 300px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#rituais">Rituais</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>Rua da Sofia, Edifício Sofia, Loja 12<br>3000-389 Coimbra, Portugal</li>
+                    <li>Tel: 966 151 334</li>
+                    <li>Email: luminare.estetica.coimbra@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Redes Sociais</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/luminare_coimbra?igsh=eXh1NGdpeWpnMzdk&utm_source=qr" target="_blank">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Luminare Estética. Todos os direitos reservados.</p>
+            <div class="legal-links">
+                <a href="politica-privacidade.html">Política de Privacidade & Cookies</a>
+                <span class="separator">|</span>
+                <a href="termos-condicoes.html">Termos e Condições</a>
+                <span class="separator">|</span>
+                <a href="https://www.livroreclamacoes.pt/" target="_blank">Livro de Reclamações</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2 style="font-family: var(--font-serif); color: var(--chocolate); margin-bottom: 0.5rem; font-size: 1.8rem;">
+                Agende o seu Ritual</h2>
+            <p style="color: #666; margin-bottom: 1rem; font-size: 0.85rem; line-height: 1.4;">Preencha os seus dados e a nossa equipa entrará em contacto para confirmar o seu momento 'Slow Beauty'.</p>
+
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" required placeholder="Ex: Maria Clara">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telemóvel</label>
+                    <input type="tel" id="phone" required placeholder="Ex: 966 151 334">
+                </div>
+                <div class="form-group">
+                    <label for="service">Serviço Desejado</label>
+                    <select id="service" required>
+                        <option value="" disabled selected>Selecione um ritual...</option>
+                        <option value="limpeza">Limpeza de Pele Avançada</option>
+                        <option value="hidratacao">Facial de Hidratação Profunda</option>
+                        <option value="anti-idade">Tratamento Anti-Idade</option>
+                        <option value="massagem">Massagens</option>
+                        <option value="laser">Depilação a Laser</option>
+                        <option value="diagnostico">Apenas Diagnóstico Inicial</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Data Preferencial</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="time-slots-container">
+                    <label>Escolha o Horário</label>
+                    <div id="timeSlotsGrid" class="time-slots-grid">
+                        <p class="time-slot-msg">Selecione uma data para ver os horários disponíveis</p>
+                    </div>
+                    <input type="hidden" id="selectedTime" name="selectedTime" required>
+                </div>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 0.5rem; padding: 0.8rem;">ENVIAR PEDIDO</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/351966151334" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="30" height="30" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
