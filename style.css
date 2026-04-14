@@ -976,17 +976,20 @@ footer {
 
     /* Adjust header elements to fit perfectly on small screens */
     header {
-        padding: 1rem 4%;
+        padding: 0.5rem 2%;
+        gap: 0.3rem;
     }
     
     .logo {
-        font-size: 1.35rem;
+        font-size: 1rem;
+        white-space: nowrap;
     }
 
     header .btn {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.65rem;
-        letter-spacing: 0.5px;
+        padding: 0.4rem 0.5rem;
+        font-size: 0.5rem;
+        letter-spacing: 0px;
+        white-space: nowrap;
     }
 
     .whatsapp-float {
@@ -1023,10 +1026,21 @@ footer {
     }
 
     nav {
-        display: none;
+        display: block;
+    }
+
+    nav ul {
+        gap: 0.4rem;
+    }
+
+    nav ul li a {
+        font-size: 0.55rem;
+        white-space: nowrap;
+        letter-spacing: 0;
     }
 
     .hero-title {
-        font-size: 3.5rem;
+        font-size: clamp(2rem, 8vw, 3rem);
+        white-space: nowrap;
     }
 }
