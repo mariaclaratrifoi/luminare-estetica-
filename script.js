@@ -1,3 +1,37 @@
+// Mobile Menu Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('header');
+    const nav = header.querySelector('nav');
+    
+    if (header && nav) {
+        const hamburger = document.createElement('div');
+        hamburger.className = 'hamburger';
+        hamburger.innerHTML = '<span></span><span></span><span></span>';
+        
+        header.insertBefore(hamburger, nav);
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+            
+            // Toggle body scroll lock
+            if (nav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+});
+
 window.addEventListener('scroll', () => {
     const header = document.getElementById('header');
     if (window.scrollY > 50) {
