@@ -167,15 +167,15 @@
                 <form class="booking-form" id="bookingForm">
                     <div class="form-group">
                         <label for="name">Nome Completo</label>
-                        <input type="text" id="name" required placeholder="Ex: Maria Clara">
+                        <input type="text" id="name" name="Nome" required placeholder="Ex: Maria Clara">
                     </div>
                     <div class="form-group">
                         <label for="phone">Telemóvel</label>
-                        <input type="tel" id="phone" required placeholder="Ex: 966 151 334">
+                        <input type="tel" id="phone" name="Telefone" required placeholder="Ex: 966 151 334">
                     </div>
                     <div class="form-group">
                         <label for="service">Serviço Desejado</label>
-                        <select id="service" required>
+                        <select id="service" name="Serviço" required>
                             <option value="" disabled selected>Selecione um ritual...</option>
                             <option value="limpeza">Limpeza de Pele Avançada</option>
                             <option value="hidratacao">Facial de Hidratação Profunda</option>
@@ -188,14 +188,14 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="date">Data Preferencial</label>
-                            <input type="date" id="date" required>
+                            <input type="date" id="date" name="Data" required>
                         </div>
                     <div class="time-slots-container">
                         <label>Escolha o Horário</label>
                         <div id="timeSlotsGrid" class="time-slots-grid">
                             <p class="time-slot-msg">Selecione uma data para ver os horários disponíveis</p>
                         </div>
-                        <input type="hidden" id="selectedTime" name="selectedTime" required>
+                        <input type="hidden" id="selectedTime" name="Horário" required>
                     </div>
                     </div>
                     <button type="submit" class="btn" style="width: 100%; margin-top: 0.5rem; padding: 0.8rem;">ENVIAR PEDIDO</button>

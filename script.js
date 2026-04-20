@@ -347,9 +347,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalText = btn.textContent;
 
             btn.textContent = 'A ENVIAR...';
+            btn.disabled = true;
             btn.style.opacity = '0.7';
 
-            // Save to Mock Database (Local Storage)
+            // Recolher dados do formulário
+            const serviceLabels = {
+                'limpeza': 'Limpeza de Pele Avançada',
+                'hidratacao': 'Facial de Hidratação Profunda',
+                'anti-idade': 'Tratamento Anti-Idade',
+                'massagem': 'Massagens',
+                'laser': 'Depilação a Laser',
+                'diagnostico': 'Apenas Diagnóstico Inicial'
+            };
+
             const newBooking = {
                 name: document.getElementById('name').value,
                 phone: document.getElementById('phone').value,
@@ -358,13 +368,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 time: selectedTimeInput.value
             };
 
+            // Guardar no localStorage (backup local)
             const bookings = JSON.parse(localStorage.getItem('luminare_bookings') || '[]');
             bookings.push(newBooking);
             localStorage.setItem('luminare_bookings', JSON.stringify(bookings));
 
-            // Simulate network request
-            setTimeout(() => {
-                btn.textContent = 'RITUAL AGENDADO!';
+            // --- Enviar email via FormSubmit (Lógica mais robusta) ---
+            const formData = new FormData();
+            formData.append("Nome do Cliente", newBooking.name);
+            formData.append("Telemóvel", newBooking.phone);
+            formData.append("Serviço", serviceLabels[newBooking.service] || newBooking.service);
+            formData.append("Data do Agendamento", new Date(newBooking.date + 'T12:00:00').toLocaleDateString('pt-PT', {
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+            }));
+            formData.append("Horário", newBooking.time);
+            formData.append("_subject", `🗓️ Novo Agendamento: ${newBooking.name}`);
+            formData.append("_template", "table");
+            formData.append("_captcha", "false");
+
+            // URL com o seu código secreto 'pivisi' que acabou de ativar
+            fetch("https://formsubmit.co/ajax/pivisi", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Falha no servidor');
+                return response.json();
+            })
+            .then(data => {
+                console.log('Sucesso:', data);
+                btn.textContent = 'RITUAL AGENDADO! ✓';
                 btn.style.backgroundColor = '#4CAF50';
                 btn.style.color = 'white';
                 btn.style.borderColor = '#4CAF50';
@@ -375,9 +408,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     bookingForm.reset();
                     updateSlots();
                     btn.textContent = originalText;
-                    btn.style = ''; 
-                }, 2000);
-            }, 1500);
+                    btn.disabled = false;
+                    btn.style = '';
+                }, 2500);
+            })
+            .catch(error => {
+                console.error('Erro detalhado:', error);
+                // Se falhar, avisamos que houve um erro técnico
+                btn.textContent = 'ERRO NO ENVIO ❌';
+                btn.style.backgroundColor = '#f44336';
+                btn.style.color = 'white';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    btn.style = '';
+                }, 3000);
+                
+                alert("Houve um problema técnico ao enviar o e-mail. Por favor, tente novamente ou use o botão do WhatsApp.");
+            });
         });
     }
 });
