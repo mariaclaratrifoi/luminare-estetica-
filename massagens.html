@@ -7,6 +7,10 @@
     <title>Massagens de Assinatura | Luminare Estética</title>
     <meta name="description"
         content="O nosso 'Ritual de Relaxamento'. Técnicas manuais envolventes num ambiente sereno e termocontrolado.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="Fotos/favicon.png" type="image/png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -186,18 +190,40 @@
                             <option value="diagnostico">Apenas Diagnóstico Inicial</option>
                         </select>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="date">Data Preferencial</label>
-                            <input type="date" id="date" name="Data" required>
-                        </div>
+
+                    <!-- Laser Zone Packs (hidden by default, shown when laser is selected) -->
+                    <div class="form-group" id="laserZonesContainer" style="display: none;">
+                        <label for="laserZone">Zona de Depilação</label>
+                        <select id="laserZone" name="Zona">
+                            <option value="" disabled selected>Selecione um pack...</option>
+                            <optgroup label="👩 Mulher">
+                                <option value="Mulher — Corpo Completo">Corpo Completo</option>
+                                <option value="Mulher — Virilha + Pernas Inteiras + Axila">Virilha + Pernas Inteiras + Axila</option>
+                                <option value="Mulher — Buço + Axila + Meia Perna">Buço + Axila + Meia Perna</option>
+                                <option value="Mulher — Queixo + Virilha Cavada">Queixo + Virilha Cavada</option>
+                            </optgroup>
+                            <optgroup label="👨 Homem">
+                                <option value="Homem — Costas + Ombros">Costas + Ombros</option>
+                                <option value="Homem — Peito + Abdómen">Peito + Abdómen</option>
+                                <option value="Homem — Barba (contorno/pescoço)">Barba (contorno / pescoço)</option>
+                                <option value="Homem — Corpo Completo">Corpo Completo</option>
+                            </optgroup>
+                        </select>
+                        <p style="font-size: 0.75rem; color: #999; margin-top: 0.4rem; font-style: italic;">
+                            Precisa de uma zona diferente? <a href="https://wa.me/351966151334" target="_blank" style="color: var(--gold-matte); text-decoration: underline;">Fale connosco pelo WhatsApp</a>.
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Data Preferencial</label>
+                        <input type="date" id="date" name="Data" required>
+                    </div>
                     <div class="time-slots-container">
                         <label>Escolha o Horário</label>
                         <div id="timeSlotsGrid" class="time-slots-grid">
                             <p class="time-slot-msg">Selecione uma data para ver os horários disponíveis</p>
                         </div>
                         <input type="hidden" id="selectedTime" name="Horário" required>
-                    </div>
                     </div>
                     <button type="submit" class="btn" style="width: 100%; margin-top: 0.5rem; padding: 0.8rem;">ENVIAR PEDIDO</button>
                 </form>

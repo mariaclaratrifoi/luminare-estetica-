@@ -237,6 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 else if (path.includes('depilacao')) serviceSelect.value = 'laser';
                 
                 updateSlots();
+                updateLaserZones();
             }
         });
     });
@@ -255,6 +256,22 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === modal) closeModalFunc();
         });
     }
+
+    // --- Laser Zones Logic ---
+    const laserZonesContainer = document.getElementById('laserZonesContainer');
+    const laserZoneSelect = document.getElementById('laserZone');
+
+    function updateLaserZones() {
+        if (!laserZonesContainer) return;
+        if (serviceSelect && serviceSelect.value === 'laser') {
+            laserZonesContainer.style.display = 'block';
+        } else {
+            laserZonesContainer.style.display = 'none';
+            if (laserZoneSelect) laserZoneSelect.value = '';
+        }
+    }
+
+    if (serviceSelect) serviceSelect.addEventListener('change', updateLaserZones);
 
     // Slots Generation Logic
     function updateSlots() {
@@ -360,10 +377,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 'diagnostico': 'Apenas Diagnóstico Inicial'
             };
 
+            // Recolher zona laser se aplicável
+            const laserZoneEl = document.getElementById('laserZone');
+            const selectedZone = (serviceSelect.value === 'laser' && laserZoneEl) ? laserZoneEl.value : '';
+
             const newBooking = {
                 name: document.getElementById('name').value,
                 phone: document.getElementById('phone').value,
                 service: serviceSelect.value,
+                zone: selectedZone,
                 date: dateInput.value,
                 time: selectedTimeInput.value
             };
@@ -373,20 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bookings.push(newBooking);
             localStorage.setItem('luminare_bookings', JSON.stringify(bookings));
 
-            // --- Enviar email via FormSubmit (Lógica mais robusta) ---
-            const formData = new FormData();
-            formData.append("Nome do Cliente", newBooking.name);
-            formData.append("Telemóvel", newBooking.phone);
-            formData.append("Serviço", serviceLabels[newBooking.service] || newBooking.service);
-            formData.append("Data do Agendamento", new Date(newBooking.date + 'T12:00:00').toLocaleDateString('pt-PT', {
-                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-            }));
-            formData.append("Horário", newBooking.time);
-            formData.append("_subject", `🗓️ Novo Agendamento: ${newBooking.name}`);
-            formData.append("_template", "table");
-            formData.append("_captcha", "false");
-
-            // Enviar email via Web3Forms (mais confiável)
+            // Enviar email via Web3Forms
             const payload = {
                 access_key: "9d1dd1e4-7ade-4ce8-98cf-4cd63629c466",
                 from_name: "Agendamentos Luminare",
@@ -399,6 +408,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }),
                 "Horário Escolhido": newBooking.time
             };
+
+            // Adicionar zona de depilação ao email se aplicável
+            if (newBooking.zone) {
+                payload["Zona de Depilação"] = newBooking.zone;
+            }
             fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
