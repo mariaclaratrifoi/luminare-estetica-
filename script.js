@@ -386,13 +386,26 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append("_template", "table");
             formData.append("_captcha", "false");
 
-            // URL com o seu código secreto 'pivisi' que acabou de ativar
-            fetch("https://formsubmit.co/ajax/pivisi", {
+            // Enviar email via Web3Forms (mais confiável)
+            const payload = {
+                access_key: "9d1dd1e4-7ade-4ce8-98cf-4cd63629c466",
+                from_name: "Agendamentos Luminare",
+                subject: `🗓️ Novo Agendamento: ${newBooking.name}`,
+                "Nome do Cliente": newBooking.name,
+                "Telemóvel": newBooking.phone,
+                "Ritual Desejado": serviceLabels[newBooking.service] || newBooking.service,
+                "Data do Agendamento": new Date(newBooking.date + 'T12:00:00').toLocaleDateString('pt-PT', {
+                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                }),
+                "Horário Escolhido": newBooking.time
+            };
+            fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                body: formData
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
             })
             .then(response => {
-                if (!response.ok) throw new Error('Falha no servidor');
+                if (!response.ok) throw new Error('Falha no servidor Web3Forms');
                 return response.json();
             })
             .then(data => {
@@ -412,6 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.style = '';
                 }, 2500);
             })
+            
             .catch(error => {
                 console.error('Erro detalhado:', error);
                 // Se falhar, avisamos que houve um erro técnico
